@@ -27,20 +27,20 @@ When this process is done you should have two publicly accessible servers. One s
 
 aws configure (fill in the appropriate information)
 
-***2. I decided to keep all my templates and files in a S3 bucket, so you can create your bucket then cp or sync your local directory
+***2. I decided to keep all my templates and files in a S3 bucket, so you can create your bucket then cp or sync your local directory***
 
 asw s3api create-bucket --bucket your-bucket-name-bucket --region us-east-1
 aws s3 cp file1 s3://your-bucket-name-bucket/ or aws s3 sync . s3://your-bucket-name-bucket
 
-***3. The next step is to generate a keypair. This keypair is used for SSH access to your instance once it's live.
+***3. The next step is to generate a keypair. This keypair is used for SSH access to your instance once it's live.***
 
 aws ec2 create-key-pair --key-name YourKey --query 'KeyMaterial' --output text > YourKey.pem
 
-***4. Next, if you don't have a default VPC assigned, this is used in place of specifically selecting or creating a VPC.
+***4. Next, if you don't have a default VPC assigned, this is used in place of specifically selecting or creating a VPC.***
 
 aws ec2 create-default vpc
 
-***5. Once your templates and files are in place, you can launch the CF stack creation process. If you use my templates and files, this will first create a new Instance, install Ansible on the instance, then run an Ansible playbook that will then deploy another CF stack containging a template for a Single Site Drupal Instance. You can feed various parameters via the command. In this example, I'm telling it what keypair to use.
+***5. Once your templates and files are in place, you can launch the CF stack creation process. If you use my templates and files, this will first create a new Instance, install Ansible on the instance, then run an Ansible playbook that will then deploy another CF stack containging a template for a Single Site Drupal Instance. You can feed various parameters via the command. In this example, I'm telling it what keypair to use.***
 
 aws cloudformation create-stack --stack-name YourStackName --template-url https://s3.amazonaws.com/your-bucket-name-bucketbucket/cf_final.json --parameters ParameterKey=KeyName,ParameterValue=YourKey
 
