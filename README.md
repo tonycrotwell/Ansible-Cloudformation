@@ -23,7 +23,7 @@ When this process is done you should have two publicly accessible servers. One s
 
 # Steps
 
-***1. The first step is to configure your local system to run aws cli against your AWS environment
+***1. The first step is to configure your local system to run aws cli against your AWS environment***
 
 aws configure (fill in the appropriate information)
 
