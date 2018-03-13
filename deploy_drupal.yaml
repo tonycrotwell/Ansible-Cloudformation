@@ -1,0 +1,21 @@
+---
+- name: CloudFormation stack to launch Drupal Single Site
+  hosts: "localhost"
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: Launch a CloudFormation stack
+    cloudformation: >
+      stack_name="CrotwellDrupalSite"
+      state=present
+      region=us-east-1
+      disable_rollback=true
+      template=Drupal.template
+    args:
+      template_parameters:
+        KeyName: DrupalKey
+        SiteName: "Crotwell Drupal website"
+    register: stack
+  - name: Show stack outputs
+    debug: msg="My stack outputs are {{stack.stack_outputs}}"
