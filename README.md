@@ -48,7 +48,9 @@ aws cloudformation create-stack --stack-name YourStackName --template-url https:
 ***IF YOU DO NOT SEE THE SECOND STACK, YOU CAN LOG INTO THE FIRST INSTANCE VIA THE KEYPAIR YOU CREATED AND THE PUBLIC IP***
 
 aws ec2 describe-addresses |grep PublicIp
+
 ssh -i YourKey.pem ec2-user@xx.xx.xx.xx (output from previous command)
+
 cat /var/log/cloud-init-output.log  (this will tell you where your userdata script might have failed.
 
 
