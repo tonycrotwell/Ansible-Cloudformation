@@ -19,3 +19,11 @@ userdata.sh - this is the userdata script that is called during the initial CF s
 The steps highlight the process and any notes I took along the way.
 
 When this process is done you should have two publicly accessible servers. One serving a simple Drupal site.
+
+
+# Steps
+
+1. The first step is to configure your local system to run aws cli against your AWS environment
+aws configure (fill in the appropriate information)
+
+2. 
