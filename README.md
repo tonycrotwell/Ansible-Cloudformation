@@ -17,3 +17,5 @@ userdata.sh - this is the userdata script that is called during the initial CF s
 
 
 The steps highlight the process and any notes I took along the way.
+
+When this process is done you should have two publicly accessible servers. One serving a simple Drupal site.
