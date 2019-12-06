@@ -1,8 +1,8 @@
 # Ansible-Cloudformation
-A project to use AWS Cloudformation to build an Ansible server that deploys Cloudformation Stacks Agentlessly
+An AWS Cloudformation template to build an Ansible server that deploys Cloudformation Stacks Agentlessly
 
 The basic premise of this project is to use AWS tools to create an Ansible server, via Cloudformation. This 
-Ansible server can be used to deploy other CF stacks.  In this example, I modified a sample Drupal Single Site install to test the 
+Ansible server can be used to deploy other CF stacks.  In this example, I modified a Drupal Single Site install to test the 
 playbook.
 
 The files include:
